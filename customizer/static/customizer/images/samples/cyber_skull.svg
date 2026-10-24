@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cyber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+  <!-- Cyberpunk Skull Art -->
+  <circle cx="200" cy="200" r="180" fill="#0f172a" stroke="url(#cyber-grad)" stroke-width="8"/>
+  <circle cx="200" cy="200" r="160" fill="none" stroke="#22d3ee" stroke-width="2" stroke-dasharray="8 6"/>
+  <!-- Skull -->
+  <path d="M 130,170 C 130,100 270,100 270,170 C 270,210 255,230 250,260 L 150,260 C 145,230 130,210 130,170 Z" fill="url(#cyber-grad)"/>
+  <!-- Eyes -->
+  <ellipse cx="165" cy="180" rx="20" ry="26" fill="#0f172a"/>
+  <ellipse cx="235" cy="180" rx="20" ry="26" fill="#0f172a"/>
+  <!-- Glowing pupils -->
+  <circle cx="165" cy="180" r="8" fill="#38bdf8"/>
+  <circle cx="235" cy="180" r="8" fill="#ec4899"/>
+  <!-- Nose -->
+  <path d="M 195,215 L 205,215 L 200,230 Z" fill="#0f172a"/>
+  <!-- Teeth / Jaw -->
+  <rect x="165" y="270" width="12" height="24" rx="3" fill="url(#cyber-grad)"/>
+  <rect x="182" y="270" width="12" height="24" rx="3" fill="url(#cyber-grad)"/>
+  <rect x="206" y="270" width="12" height="24" rx="3" fill="url(#cyber-grad)"/>
+  <rect x="223" y="270" width="12" height="24" rx="3" fill="url(#cyber-grad)"/>
+  <!-- Text -->
+  <text x="200" y="340" fill="#38bdf8" font-family="'Impact', 'Arial Black', sans-serif" font-size="28" font-weight="bold" text-anchor="middle" letter-spacing="4">CYBER·COL</text>
+</svg>

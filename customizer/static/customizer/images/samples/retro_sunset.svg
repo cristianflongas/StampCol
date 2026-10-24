@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <!-- Vintage 80s Synthwave Sunset -->
+  <defs>
+    <linearGradient id="sunset-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="35%" stop-color="#f97316"/>
+      <stop offset="70%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <!-- Sol con cortes horizontales -->
+  <g fill="url(#sunset-grad)">
+    <circle cx="200" cy="180" r="120" mask="url(#sun-stripes)"/>
+  </g>
+  <mask id="sun-stripes">
+    <rect x="0" y="0" width="400" height="400" fill="white"/>
+    <rect x="60" y="200" width="280" height="8" fill="black"/>
+    <rect x="60" y="220" width="280" height="12" fill="black"/>
+    <rect x="60" y="245" width="280" height="16" fill="black"/>
+    <rect x="60" y="275" width="280" height="20" fill="black"/>
+  </mask>
+  <!-- Palmeras vectoriales -->
+  <path d="M 80,310 Q 140,250 150,160 Q 130,220 70,260 Z" fill="#18181b"/>
+  <path d="M 150,160 Q 170,140 210,145 Q 170,160 150,160 Z" fill="#18181b"/>
+  <path d="M 150,160 Q 180,180 200,210 Q 160,185 150,160 Z" fill="#18181b"/>
+  <path d="M 150,160 Q 120,150 90,160 Q 125,170 150,160 Z" fill="#18181b"/>
+  <!-- Base de rejilla / Grid -->
+  <line x1="40" y1="310" x2="360" y2="310" stroke="#06b6d4" stroke-width="4"/>
+  <text x="200" y="360" fill="#f43f5e" font-family="'Impact', sans-serif" font-size="34" font-weight="900" text-anchor="middle" font-style="italic" letter-spacing="4">NEON HORIZON</text>
+</svg>

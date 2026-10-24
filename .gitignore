@@ -1,0 +1,39 @@
+# Python & Django
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Archivos de entorno y credenciales locales
+.env
+.env.local
+
+# Base de datos local
+*.sqlite3
+*.db
+
+# Archivos estáticos compilados y medios generados por usuarios
+staticfiles/
+media/
+/Custom_t-shirts_rotating_in_studio_20261020204457.mp4
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs y temporales
+*.log
+scratch/
+test_output.txt
+
+# Documentos Word y entregables de taller
+*.docx
+*.doc
+Taller*

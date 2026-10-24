@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" width="100%" height="100%" id="svg-hoodie-back">
+  <defs>
+    <filter id="hoodie-shadow-back" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <!-- Silueta Principal del Buzo (Espalda) -->
+  <g id="hoodie-color-layer-back" fill="currentColor">
+    <!-- Mangas traseras -->
+    <path d="M 180,115 L 70,270 C 58,287 45,340 40,380 C 40,390 55,395 70,390 L 115,360 L 165,260 L 175,220 Z" />
+    <path d="M 420,115 L 530,270 C 542,287 555,340 560,380 C 560,390 545,395 530,390 L 485,360 L 435,260 L 425,220 Z" />
+
+    <!-- Puños mangas -->
+    <path d="M 40,380 L 70,390 L 65,410 L 35,400 Z" opacity="0.9" />
+    <path d="M 560,380 L 530,390 L 535,410 L 565,400 Z" opacity="0.9" />
+
+    <!-- Torso Espalda Completo -->
+    <path d="M 180,115 C 220,105 260,110 300,110 C 340,110 380,105 420,115 L 440,240 L 425,580 L 175,580 L 160,240 Z" />
+
+    <!-- Pretina inferior -->
+    <path d="M 175,580 L 425,580 L 425,625 C 425,630 420,635 415,635 L 185,635 C 180,635 175,630 175,625 Z" opacity="0.9" />
+
+    <!-- Capucha vista trasera (Cuelga hacia la espalda) -->
+    <path d="M 205,115 C 215,60 250,25 300,25 C 350,25 385,60 395,115 C 375,185 350,225 300,225 C 250,225 225,185 205,115 Z" />
+  </g>
+
+  <!-- Sombras de volumen de la capucha que cae sobre la espalda -->
+  <path d="M 215,120 C 235,190 260,220 300,220 C 340,220 365,190 385,120 C 370,165 345,195 300,195 C 255,195 230,165 215,120 Z" fill="#000000" opacity="0.28" />
+
+  <!-- Costura central de la capucha -->
+  <path d="M 300,25 L 300,225" stroke="#000000" stroke-width="2" stroke-dasharray="3 3" opacity="0.25" fill="none" />
+
+  <!-- Costuras y pliegues traseros -->
+  <g fill="none" stroke="#000000" stroke-width="2" opacity="0.22">
+    <!-- Sisales y hombros -->
+    <path d="M 180,115 C 195,170 185,200 175,225" />
+    <path d="M 420,115 C 405,170 415,200 425,225" />
+
+    <!-- Pliegues laterales -->
+    <path d="M 185,280 C 200,310 200,350 190,400" />
+    <path d="M 415,280 C 400,310 400,350 410,400" />
+
+    <!-- Doble costura pretina inferior -->
+    <line x1="175" y1="580" x2="425" y2="580" />
+    <line x1="175" y1="585" x2="425" y2="585" stroke-dasharray="3 3" />
+  </g>
+
+  <!-- Guía visual del área de impresión (Espalda grande) -->
+  <rect id="print-area-guide-back" x="200" y="240" width="200" height="280" rx="10" 
+        fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="6 4" opacity="0" />
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <!-- Sol Naciente Rojo -->
+  <circle cx="200" cy="180" r="110" fill="#dc2626" />
+  <!-- Olas estilo Kanagawa -->
+  <path d="M 60,270 Q 120,200 180,240 T 300,210 Q 350,190 360,260 L 360,320 L 40,320 Z" fill="#0284c7" />
+  <path d="M 40,290 Q 100,240 170,270 T 300,240 Q 360,220 370,290 L 370,330 L 40,330 Z" fill="#0369a1" />
+  <path d="M 40,310 Q 110,270 200,290 T 360,280 L 360,340 L 40,340 Z" fill="#0c4a6e" />
+  <!-- Espuma blanca -->
+  <path d="M 160,240 Q 180,220 200,245 Q 170,230 160,240 Z" fill="#ffffff" />
+  <path d="M 285,215 Q 310,195 320,220 Q 295,205 285,215 Z" fill="#ffffff" />
+  <!-- Marco circular estético -->
+  <circle cx="200" cy="200" r="170" fill="none" stroke="#dc2626" stroke-width="6" />
+  <!-- Caracteres Kanji japoneses -->
+  <text x="200" y="380" fill="#ffffff" font-family="'Arial', sans-serif" font-size="22" font-weight="900" text-anchor="middle" letter-spacing="6">TOKYO · 東京</text>
+</svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" width="100%" height="100%" id="svg-hoodie-front">
+  <defs>
+    <!-- Sombreado y pliegues realistas -->
+    <filter id="hoodie-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000000" flood-opacity="0.18" />
+    </filter>
+    <linearGradient id="fold-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.12" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.12" />
+    </linearGradient>
+    <linearGradient id="sleeve-left-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+
+  <!-- Capucha (Fondo detrás del cuello) -->
+  <path d="M 230,115 C 200,60 250,15 300,15 C 350,15 400,60 370,115 C 340,95 260,95 230,115 Z" fill="#1e1e1e" opacity="0.35"/>
+  <path d="M 245,110 C 265,95 335,95 355,110 C 370,140 330,150 300,150 C 270,150 230,140 245,110 Z" fill="#000000" opacity="0.25"/>
+
+  <!-- Silueta Principal del Buzo (Cuerpo y Mangas) con color dinámico -->
+  <g id="hoodie-color-layer" fill="currentColor">
+    <!-- Mangas -->
+    <path d="M 180,120 L 70,270 C 58,287 45,340 40,380 C 40,390 55,395 70,390 L 115,360 L 165,260 L 175,220 Z" />
+    <path d="M 420,120 L 530,270 C 542,287 555,340 560,380 C 560,390 545,395 530,390 L 485,360 L 435,260 L 425,220 Z" />
+
+    <!-- Puños mangas -->
+    <path d="M 40,380 L 70,390 L 65,410 L 35,400 Z" opacity="0.9" />
+    <path d="M 560,380 L 530,390 L 535,410 L 565,400 Z" opacity="0.9" />
+
+    <!-- Torso y Hombros -->
+    <path d="M 180,120 C 220,105 260,112 300,114 C 340,112 380,105 420,120 L 440,240 L 425,580 L 175,580 L 160,240 Z" />
+
+    <!-- Pretina inferior -->
+    <path d="M 175,580 L 425,580 L 425,625 C 425,630 420,635 415,635 L 185,635 C 180,635 175,630 175,625 Z" opacity="0.9" />
+
+    <!-- Bolsillo Canguro -->
+    <path d="M 220,440 L 380,440 L 400,530 C 400,540 390,550 380,550 L 220,550 C 210,550 200,540 200,530 Z" />
+
+    <!-- Capucha Delantera / Cuello exterior -->
+    <path d="M 215,115 C 240,65 260,40 300,40 C 340,40 360,65 385,115 C 370,145 350,155 300,155 C 250,155 230,145 215,115 Z" />
+  </g>
+
+  <!-- Capa de Sombras, Textura y Detalles Realistas -->
+  <g fill="none" stroke="#000000" stroke-width="2" opacity="0.25">
+    <!-- Costuras hombros y sisas -->
+    <path d="M 180,120 C 190,165 185,200 175,225" />
+    <path d="M 420,120 C 410,165 415,200 425,225" />
+
+    <!-- Costuras bolsillo canguro -->
+    <path d="M 220,440 L 380,440" stroke-dasharray="4 3" />
+    <path d="M 200,530 L 220,440" stroke-dasharray="4 3" />
+    <path d="M 400,530 L 380,440" stroke-dasharray="4 3" />
+
+    <!-- Entrada de las manos al bolsillo -->
+    <path d="M 205,520 C 215,480 220,460 225,445" stroke="#ffffff" stroke-width="2" opacity="0.2" />
+    <path d="M 395,520 C 385,480 380,460 375,445" stroke="#000000" stroke-width="2" opacity="0.3" />
+
+    <!-- Doble costura pretina -->
+    <line x1="175" y1="580" x2="425" y2="580" stroke-width="2" />
+    <line x1="175" y1="585" x2="425" y2="585" stroke-dasharray="3 3" />
+
+    <!-- Pliegues de la tela (Volumen y caída) -->
+    <path d="M 185,250 C 205,270 205,320 195,350" stroke-linecap="round" />
+    <path d="M 415,250 C 395,270 395,320 405,350" stroke-linecap="round" />
+    <path d="M 190,400 C 210,430 205,480 185,530" stroke-linecap="round" />
+    <path d="M 410,400 C 390,430 395,480 415,530" stroke-linecap="round" />
+  </g>
+
+  <!-- Cordones de la capucha (Drawstrings) -->
+  <g stroke="#e2e8f0" stroke-width="4.5" stroke-linecap="round" filter="drop-shadow(0 2px 3px rgba(0,0,0,0.3))">
+    <!-- Cordón izquierdo -->
+    <path d="M 268,145 Q 260,220 270,270" fill="none" />
+    <line x1="270" y1="270" x2="270" y2="282" stroke="#94a3b8" stroke-width="6" /> <!-- Puntera metálica -->
+
+    <!-- Cordón derecho -->
+    <path d="M 332,145 Q 340,210 330,265" fill="none" />
+    <line x1="330" y1="265" x2="330" y2="277" stroke="#94a3b8" stroke-width="6" /> <!-- Puntera metálica -->
+  </g>
+
+  <!-- Ojales de los cordones -->
+  <circle cx="268" cy="145" r="4.5" fill="#475569" stroke="#cbd5e1" stroke-width="1.5" />
+  <circle cx="332" cy="145" r="4.5" fill="#475569" stroke="#cbd5e1" stroke-width="1.5" />
+
+  <!-- Guía visual del área de impresión (pecho) -->
+  <rect id="print-area-guide-front" x="220" y="180" width="160" height="220" rx="8" 
+        fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="6 4" opacity="0" />
+</svg>

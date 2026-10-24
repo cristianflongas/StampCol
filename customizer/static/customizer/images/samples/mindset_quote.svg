@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <!-- Minimalist Typography Badge -->
+  <rect x="30" y="30" width="340" height="340" rx="24" fill="none" stroke="#f8fafc" stroke-width="4" stroke-opacity="0.8"/>
+  <rect x="45" y="45" width="310" height="310" rx="16" fill="none" stroke="#f8fafc" stroke-width="1.5" stroke-opacity="0.4"/>
+  
+  <text x="200" y="140" fill="#f8fafc" font-family="'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="300" text-anchor="middle" letter-spacing="8">STAMPCOL LAB</text>
+  <text x="200" y="195" fill="#38bdf8" font-family="'Impact', Arial Black, sans-serif" font-size="44" font-weight="900" text-anchor="middle" letter-spacing="3">UNSTOPPABLE</text>
+  <text x="200" y="240" fill="#f8fafc" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-style="italic" font-weight="bold" text-anchor="middle" letter-spacing="2">MINDSET</text>
+  <line x1="100" y1="265" x2="300" y2="265" stroke="#f43f5e" stroke-width="3"/>
+  <text x="200" y="300" fill="#94a3b8" font-family="monospace" font-size="14" text-anchor="middle" letter-spacing="5">COLOMBIA · 2026</text>
+</svg>

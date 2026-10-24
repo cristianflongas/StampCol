@@ -1,0 +1,333 @@
+/**
+ * StampCol - Pro UI/UX Design System Styles
+ * Estilos pulidos para personalizador fotorrealista, navegación, pestañas de estudio y componentes.
+ */
+
+:root {
+    --sc-amber: #f59e0b;
+    --sc-amber-hover: #d97706;
+    --sc-emerald: #059669;
+    --sc-emerald-hover: #047857;
+    --sc-slate-dark: #0f172a;
+    --sc-slate-border: #e2e8f0;
+}
+
+/* Banner de Temporada */
+.sc-seasonal-banner {
+    background: linear-gradient(90deg, #991b1b 0%, #b91c1c 50%, #c2410c 100%);
+    color: #ffffff;
+    font-size: 0.8125rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 40;
+}
+
+.sc-seasonal-badge {
+    background-color: rgba(255, 255, 255, 0.22);
+    padding: 0.18rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    display: inline-block;
+}
+
+/* Pestañas del Estudio del Personalizador */
+.studio-tab-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.6rem 0.5rem;
+    border-radius: 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    background: transparent;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+    .studio-tab-btn {
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 1rem;
+        font-size: 0.8125rem;
+    }
+}
+
+.studio-tab-btn:hover {
+    color: #0f172a;
+    background: #f8fafc;
+}
+
+.studio-tab-btn.active {
+    color: #0f172a;
+    background: #ffffff;
+    border-color: #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Tarjetas y Contenedores */
+.sc-card {
+    background: #ffffff;
+    border: 1px solid var(--sc-slate-border);
+    border-radius: 1.5rem;
+    padding: 1.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.sc-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.06);
+    border-color: #cbd5e1;
+}
+
+.sc-step-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #f59e0b;
+    line-height: 1;
+}
+
+/* Sección de Métricas / Números */
+.sc-metrics-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #ffffff;
+    border-radius: 2rem;
+}
+
+.sc-metric-counter {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #f59e0b;
+}
+
+/* Acordeón de FAQs */
+.sc-faq-item {
+    background: #ffffff;
+    border: 1px solid var(--sc-slate-border);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+.sc-faq-item:hover {
+    border-color: #cbd5e1;
+}
+
+.sc-faq-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 1.25rem 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+.sc-faq-trigger:hover {
+    color: #d97706;
+}
+
+.sc-faq-trigger[aria-expanded="true"] .sc-faq-icon {
+    transform: rotate(180deg);
+}
+
+.sc-faq-icon {
+    transition: transform 0.2s ease;
+}
+
+.sc-faq-content {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+    color: #475569;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Botón Flotante de WhatsApp */
+.sc-whatsapp-floating {
+    position: fixed;
+    bottom: 5.5rem;
+    right: 1.25rem;
+    z-index: 45;
+    display: none; /* Oculto en móviles muy pequeños donde ya está la barra fija */
+    align-items: center;
+    gap: 0.5rem;
+    background: #059669;
+    color: #ffffff;
+    padding: 0.75rem 1.15rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    box-shadow: 0 8px 24px -4px rgba(5, 150, 105, 0.45);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 640px) {
+    .sc-whatsapp-floating {
+        display: flex;
+    }
+}
+
+.sc-whatsapp-floating:hover {
+    background: #047857;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 28px -4px rgba(5, 150, 105, 0.55);
+}
+
+@media (min-width: 1024px) {
+    .sc-whatsapp-floating {
+        bottom: 2rem;
+        right: 2rem;
+    }
+}
+
+/* Área segura para móviles (Notch / Home bar) */
+.safe-bottom {
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Chips de Ideas Rápidas */
+.sc-quick-idea-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #ffffff;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+.sc-quick-idea-chip:hover {
+    background: #fef3c7;
+    border-color: #fde68a;
+    color: #b45309;
+    transform: translateY(-1px);
+}
+
+/* Mapa */
+.sc-map-container {
+    width: 100%;
+    height: 280px;
+    position: relative;
+}
+.sc-map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ============================================================== */
+/* SLIDER / CAROUSEL DE SOLUCIONES & COLECCIONES                  */
+/* ============================================================== */
+.sc-slider-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0.5rem 0.25rem 1.5rem 0.25rem;
+}
+.sc-slider-track::-webkit-scrollbar {
+    display: none;
+}
+.sc-slider-card {
+    flex: 0 0 360px;
+    max-width: 88vw;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1px solid var(--sc-slate-border);
+    border-radius: 1.5rem;
+    padding: 1.75rem;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease, border-color 0.2s ease;
+}
+.sc-slider-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 30px -10px rgba(15, 23, 42, 0.08);
+    border-color: #cbd5e1;
+}
+.sc-slider-nav-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 9999px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.sc-slider-nav-btn:hover {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+    transform: scale(1.08);
+}
+.sc-slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: #cbd5e1;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+.sc-slider-dot.active {
+    width: 24px;
+    background: #f59e0b;
+}
+
+/* ============================================================== */
+/* CUADRÍCULA DE TRANSPARENCIA PNG (CHECKERBOARD PARA BORRADOR)   */
+/* ============================================================== */
+.sc-checkerboard-bg {
+    background-color: #ffffff;
+    background-image: 
+        linear-gradient(45deg, #e2e8f0 25%, transparent 25%),
+        linear-gradient(-45deg, #e2e8f0 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e2e8f0 75%),
+        linear-gradient(-45deg, transparent 75%, #e2e8f0 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+}
+
+.sc-eraser-cursor {
+    cursor: crosshair;
+}
+
+/* ============================================================== */
+/* UTILIDADES RESPONSIVAS & SAFE AREA PARA MÓVILES (iOS/ANDROID)  */
+/* ============================================================== */
+.safe-bottom {
+    padding-bottom: max(0.625rem, calc(0.5rem + env(safe-area-inset-bottom)));
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* Optimización de viewport móvil en iOS Safari */
+    .min-h-screen-ios {
+        min-height: -webkit-fill-available;
+    }
+}
+
+

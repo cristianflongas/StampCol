@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 680" width="100%" height="100%" id="svg-tshirt-front">
+  <defs>
+    <filter id="tshirt-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000000" flood-opacity="0.16" />
+    </filter>
+  </defs>
+
+  <!-- Cuello Interior (Fondo detrás del cuello) -->
+  <path d="M 235,108 C 260,132 340,132 365,108 C 350,92 250,92 235,108 Z" fill="#000000" opacity="0.32"/>
+
+  <!-- Silueta Principal de la Camiseta / Buso básico (Cuerpo y Mangas) con color dinámico -->
+  <g id="tshirt-color-layer" fill="currentColor">
+    <!-- Manga Izquierda -->
+    <path d="M 195,115 L 75,210 C 65,218 60,230 65,245 L 95,285 C 105,295 120,295 130,285 L 175,235 L 175,200 Z" />
+
+    <!-- Manga Derecha -->
+    <path d="M 405,115 L 525,210 C 535,218 540,230 535,245 L 505,285 C 495,295 480,295 470,285 L 425,235 L 425,200 Z" />
+
+    <!-- Torso y Hombros -->
+    <path d="M 195,115 C 235,110 265,114 300,114 C 335,114 365,110 405,115 L 430,235 L 420,620 L 180,620 L 170,235 Z" />
+  </g>
+
+  <!-- Cuello Acanalado Frontal (Ribbed Collar) -->
+  <path d="M 230,105 C 255,148 345,148 370,105 C 355,125 245,125 230,105 Z" fill="none" stroke="#000000" stroke-width="7" opacity="0.18" />
+  <path d="M 230,105 C 255,148 345,148 370,105 C 355,128 245,128 230,105 Z" fill="none" stroke="currentColor" stroke-width="6" opacity="0.95" />
+
+  <!-- Costuras y pliegues realistas de tela de algodón -->
+  <g fill="none" stroke="#000000" stroke-width="1.8" opacity="0.22">
+    <!-- Costura del cuello -->
+    <path d="M 226,108 C 255,152 345,152 374,108" stroke-dasharray="3 2" />
+    
+    <!-- Costuras hombros y sisas -->
+    <path d="M 195,115 L 172,215" />
+    <path d="M 405,115 L 428,215" />
+
+    <!-- Dobladillo mangas -->
+    <line x1="68" y1="242" x2="128" y2="282" stroke-dasharray="3 2" />
+    <line x1="532" y1="242" x2="472" y2="282" stroke-dasharray="3 2" />
+
+    <!-- Dobladillo inferior -->
+    <line x1="180" y1="605" x2="420" y2="605" stroke-dasharray="3 2" />
+
+    <!-- Pliegues de caída y movimiento de la tela -->
+    <path d="M 185,260 C 205,290 200,340 190,380" stroke-linecap="round" />
+    <path d="M 415,260 C 395,290 400,340 410,380" stroke-linecap="round" />
+    <path d="M 195,430 C 215,460 210,510 190,560" stroke-linecap="round" />
+    <path d="M 405,430 C 385,460 390,510 410,560" stroke-linecap="round" />
+  </g>
+
+  <!-- Luces sutiles de volumen -->
+  <path d="M 205,130 L 215,350 L 225,580" stroke="#ffffff" stroke-width="2" opacity="0.12" stroke-linecap="round" />
+</svg>
