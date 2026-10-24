@@ -1734,11 +1734,11 @@
             </div>
 
             <h3 class="font-headline-md text-headline-md font-bold text-on-surface">
-                ¡Tu diseño está listo para enviar!
+                ¡Conectando con StampCol!
             </h3>
             
             <p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed">
-                El mensaje con tus datos y la imagen de tu prenda están preparados para mandar a WhatsApp.
+                Te estamos dirigiendo directamente al chat de WhatsApp de StampCol (+57 317 1535408). Tu cotización ya está redactada.
             </p>
 
             <!-- Previsualización de la Imagen del Diseño -->
@@ -1754,19 +1754,19 @@
             <div class="p-3 rounded-xl bg-surface-container text-left text-xs text-on-surface-variant space-y-1.5 mb-4 border border-slate-line/40">
                 <div class="flex items-start gap-2">
                     <span class="font-bold text-secondary text-sm">1.</span>
-                    <span>Al abrir WhatsApp, tu texto de cotización ya estará listo en el chat.</span>
+                    <span>Tu cotización ya está redactada en el chat oficial de StampCol (+57 317 1535408).</span>
                 </div>
                 <div class="flex items-start gap-2">
                     <span class="font-bold text-secondary text-sm">2.</span>
-                    <span>Solo presiona <strong>Pegar (Ctrl + V)</strong> o adjunta la foto para enviarla como un mensaje normal.</span>
+                    <span>Presiona <strong>Pegar (Ctrl + V)</strong> o adjunta tu foto descargada para enviar el diseño.</span>
                 </div>
             </div>
 
-            <!-- Botón Principal: Abrir WhatsApp -->
+            <!-- Botón Principal: Abrir WhatsApp Directo -->
             <div class="flex flex-col gap-2.5">
                 <a id="btn-open-wa-direct" href="#" target="_blank" class="w-full py-3.5 px-6 rounded-xl bg-whatsapp-green hover:bg-[#20bd5a] text-white font-label-lg text-label-lg font-bold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
                     <svg class="w-5 h-5 fill-white shrink-0" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.44 19.65L5.27 16.61L5.07 16.3C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.11C19.42 7.66 20.27 9.73 20.27 11.92C20.27 16.46 16.58 20.15 12.04 20.15ZM16.55 14.39C16.3 14.27 15.08 13.67 14.86 13.59C14.63 13.5 14.47 13.46 14.31 13.71C14.14 13.95 13.66 14.52 13.51 14.68C13.37 14.85 13.22 14.87 12.98 14.75C12.73 14.62 11.93 14.36 10.99 13.52C10.25 12.87 9.75 12.06 9.61 11.81C9.46 11.57 9.59 11.43 9.72 11.31C9.83 11.2 9.97 11.02 10.09 10.88C10.21 10.74 10.26 10.63 10.33 10.47C10.41 10.31 10.37 10.17 10.31 10.04C10.25 9.92 9.75 8.7 9.55 8.2C9.35 7.72 9.14 7.78 8.99 7.77C8.84 7.77 8.68 7.77 8.52 7.77C8.35 7.77 8.08 7.83 7.86 8.08C7.63 8.32 7 8.91 7 10.13C7 11.35 7.89 12.52 8.01 12.69C8.13 12.85 9.75 15.36 12.24 16.44C12.83 16.7 13.29 16.85 13.65 16.96C14.25 17.15 14.79 17.12 15.22 17.06C15.7 16.99 16.69 16.46 16.9 15.88C17.1 15.31 17.1 14.82 17.04 14.72C16.98 14.62 16.8 14.52 16.55 14.39Z"/></svg>
-                    <span>Abrir WhatsApp Ahora</span>
+                    <span>Ir al Chat de StampCol (+57 317 1535408)</span>
                 </a>
 
                 <!-- Opciones auxiliares -->
@@ -2286,23 +2286,9 @@
                 }
             }
 
-            // 1. En Móviles (Android / iOS) con soporte nativo de compartir archivos:
-            // Abre WhatsApp con la imagen adjuntada directamente y el texto en el pie de foto
-            if (window.activeOrderData.file && navigator.canShare && navigator.canShare({ files: [window.activeOrderData.file] })) {
-                try {
-                    await navigator.share({
-                        title: `Pedido StampCol #${orderId}`,
-                        text: waText,
-                        files: [window.activeOrderData.file]
-                    });
-                    return;
-                } catch (shareErr) {
-                    console.log('Compartir nativo no completado o descartado:', shareErr);
-                }
-            }
+            const waUrl = orderRes.whatsapp_url || `https://api.whatsapp.com/send?phone=573171535408&text=${encodeURIComponent(waText)}`;
 
-            // 2. En Computadores o Navegadores de escritorio:
-            // a) Copiar la imagen al portapapeles del sistema para permitir Ctrl+V en WhatsApp Web
+            // 1. Copiar imagen al portapapeles del sistema (para pegar directo con Ctrl+V en WhatsApp Web)
             if (window.activeOrderData.blob && navigator.clipboard && typeof ClipboardItem !== 'undefined') {
                 try {
                     await navigator.clipboard.write([
@@ -2313,7 +2299,7 @@
                 }
             }
 
-            // b) Descarga automática de respaldo de la foto
+            // 2. Descarga automática de respaldo de la foto del diseño
             if (window.activeOrderData.blob) {
                 try {
                     const dlLink = document.createElement('a');
@@ -2330,8 +2316,16 @@
                 }
             }
 
-            // c) Desplegar modal asistente de envío
+            // 3. Desplegar modal informativo y de respaldo con el diseño
             showWhatsAppTransferModal(orderRes, imageBase64);
+
+            // 4. ABRIR DIRECTAMENTE EL CHAT OFICIAL DE WHATSAPP CON STAMPCOL (+57 317 1535408)
+            setTimeout(() => {
+                const win = window.open(waUrl, '_blank');
+                if (!win || win.closed || typeof win.closed === 'undefined') {
+                    window.location.href = waUrl;
+                }
+            }, 300);
         }
 
         function showWhatsAppTransferModal(orderRes, imageBase64) {

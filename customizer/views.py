@@ -621,8 +621,9 @@ def save_order(request):
 
     # Construir mensaje de WhatsApp con formato enriquecido
     whatsapp_number = getattr(settings, 'WHATSAPP_NUMBER', '573171535408')
-    if not whatsapp_number or whatsapp_number == '573001234567':
+    if not whatsapp_number or str(whatsapp_number).strip() in ['573001234567', '']:
         whatsapp_number = '573171535408'
+    whatsapp_number = re.sub(r'[^0-9]', '', str(whatsapp_number))
 
     tipo_prenda_str = order.garment_type if order.garment_type else "Camiseta Cuello Redondo"
     wa_text = (
