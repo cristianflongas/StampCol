@@ -44,20 +44,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
     <style>
-        @layer base {
-            html, body {
-                margin: 0;
-                padding: 0;
-            }
-            body {
-                overscroll-behavior: none;
-            }
-            main > :first-child {
-                margin-top: 0 !important;
-            }
-            main > :last-child {
-                margin-bottom: 0 !important;
-            }
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden !important;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+        body {
+            overscroll-behavior: none;
+        }
+        main > :first-child {
+            margin-top: 0 !important;
+        }
+        main > :last-child {
+            margin-bottom: 0 !important;
         }
         canvas {
             touch-action: none;
@@ -268,20 +269,20 @@
     <!-- ========================================================= -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
         <!-- Top Announcement Bar -->
-        <div class="bg-primary-container text-surface-container py-1.5 px-4">
-            <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 text-center">
-                <span class="material-symbols-outlined text-amber-vibrant text-[15px]">local_shipping</span>
-                <p class="font-label-caps text-label-caps uppercase tracking-wider text-surface-container-high">
-                    Taller 100% Digital • Entregas a domicilio en Campoalegre y envíos seguros a toda Colombia • Sin pedido mínimo
+        <div class="bg-primary-container text-surface-container py-1 px-3 sm:px-4">
+            <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-1 sm:gap-2 text-center">
+                <span class="material-symbols-outlined text-amber-vibrant text-[13px] sm:text-[15px]">local_shipping</span>
+                <p class="font-label-caps uppercase tracking-wider text-surface-container-high text-[10px] sm:text-xs">
+                    Taller 100% Digital • Entregas en Campoalegre • Envíos a Colombia • Sin pedido mínimo
                 </p>
             </div>
         </div>
 
         <!-- Main Header Bar -->
-        <div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6">
+        <div class="h-16 sm:h-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-12 flex items-center justify-between gap-2 sm:gap-6">
             <a href="/" class="flex items-center shrink-0 group py-1" title="StampCol — Ir al inicio">
-                <div class="relative flex items-center justify-center p-1.5 rounded-2xl bg-surface-pure shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all">
-                    <img alt="StampCol - Create your idea" class="h-16 sm:h-[70px] w-auto object-contain transition-transform" src="{% static 'customizer/images/logo_stampcol.png' %}">
+                <div class="relative flex items-center justify-center p-1 sm:p-1.5 rounded-2xl bg-surface-pure shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all">
+                    <img alt="StampCol - Create your idea" class="h-10 sm:h-16 md:h-[70px] w-auto object-contain transition-transform" src="{% static 'customizer/images/logo_stampcol.png' %}">
                 </div>
             </a>
 
@@ -303,9 +304,9 @@
                     <svg class="w-4 h-4 fill-[#25D366] shrink-0" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.44 19.65L5.27 16.61L5.07 16.3C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.11C19.42 7.66 20.27 9.73 20.27 11.92C20.27 16.46 16.58 20.15 12.04 20.15ZM16.55 14.39C16.3 14.27 15.08 13.67 14.86 13.59C14.63 13.5 14.47 13.46 14.31 13.71C14.14 13.95 13.66 14.52 13.51 14.68C13.37 14.85 13.22 14.87 12.98 14.75C12.73 14.62 11.93 14.36 10.99 13.52C10.25 12.87 9.75 12.06 9.61 11.81C9.46 11.57 9.59 11.43 9.72 11.31C9.83 11.2 9.97 11.02 10.09 10.88C10.21 10.74 10.26 10.63 10.33 10.47C10.41 10.31 10.37 10.17 10.31 10.04C10.25 9.92 9.75 8.7 9.55 8.2C9.35 7.72 9.14 7.78 8.99 7.77C8.84 7.77 8.68 7.77 8.52 7.77C8.35 7.77 8.08 7.83 7.86 8.08C7.63 8.32 7 8.91 7 10.13C7 11.35 7.89 12.52 8.01 12.69C8.13 12.85 9.75 15.36 12.24 16.44C12.83 16.7 13.29 16.85 13.65 16.96C14.25 17.15 14.79 17.12 15.22 17.06C15.7 16.99 16.69 16.46 16.9 15.88C17.1 15.31 17.1 14.82 17.04 14.72C16.98 14.62 16.8 14.52 16.55 14.39Z"/></svg>
                     <span>WhatsApp</span>
                 </a>
-                <a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-container text-on-secondary font-label-lg text-label-lg shadow-[0_6px_16px_-2px_rgba(255,107,0,0.35)] hover:bg-secondary transition-all" data-path="estudio-de-diseno" href="#estudio-creativo">
-                    <span class="material-symbols-outlined text-[18px]">palette</span>
-                    <span>Diseñar Prenda</span>
+                <a class="inline-flex items-center gap-1 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full bg-secondary-container text-on-secondary font-label-md sm:font-label-lg text-xs sm:text-sm shadow-[0_6px_16px_-2px_rgba(255,107,0,0.35)] hover:bg-secondary transition-all font-bold" data-path="estudio-de-diseno" href="#estudio-creativo">
+                    <span class="material-symbols-outlined text-[15px] sm:text-[18px]">palette</span>
+                    <span>Diseñar<span class="hidden sm:inline"> Prenda</span></span>
                 </a>
             </div>
         </div>
@@ -314,37 +315,37 @@
     <!-- ========================================================= -->
     <!-- CONTENIDO PRINCIPAL                                       -->
     <!-- ========================================================= -->
-    <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
+    <main class="w-full pt-28 sm:pt-28 lg:pt-24 bg-surface min-h-[calc(100vh-80px)]">
         <div class="flex flex-col w-full">
             <!-- HERO MASTER SECTION -->
-            <section class="relative w-full bg-surface-pure pt-space-xl pb-space-3xl overflow-hidden">
+            <section class="relative w-full bg-surface-pure pt-6 sm:pt-space-xl pb-space-3xl overflow-hidden">
                 <!-- Ambient Backdrop Subtle Shapes -->
                 <div class="absolute -top-32 right-0 w-[550px] h-[550px] bg-secondary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
                 <div class="absolute top-1/2 -left-40 w-[450px] h-[450px] bg-surface-container-high/60 rounded-full blur-3xl pointer-events-none"></div>
 
-                <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
                     <!-- Upper Trust Badges Pill Bar -->
-                    <div class="flex flex-wrap items-center justify-center gap-2 mb-space-lg">
-                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-cobalt-dark font-label-caps text-label-caps uppercase shadow-sm">
-                            <span class="material-symbols-outlined text-[15px] text-whatsapp-green" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pt-2 sm:pt-0 mb-space-md sm:mb-space-lg">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-surface-container text-cobalt-dark font-label-caps text-[10px] sm:text-label-caps uppercase shadow-sm">
+                            <span class="material-symbols-outlined text-[14px] text-whatsapp-green" style="font-variation-settings: 'FILL' 1;">verified</span>
                             Taller 100% Digital Campoalegre
                         </span>
-                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-cobalt-dark font-label-caps text-label-caps uppercase shadow-sm">
-                            <span class="material-symbols-outlined text-[15px] text-secondary-container">bolt</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-surface-container text-cobalt-dark font-label-caps text-[10px] sm:text-label-caps uppercase shadow-sm">
+                            <span class="material-symbols-outlined text-[14px] text-secondary-container">bolt</span>
                             Sin mínimo de pedido
                         </span>
-                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-cobalt-dark font-label-caps text-label-caps uppercase shadow-sm">
-                            <span class="material-symbols-outlined text-[15px] text-cobalt-core">local_shipping</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-surface-container text-cobalt-dark font-label-caps text-[10px] sm:text-label-caps uppercase shadow-sm">
+                            <span class="material-symbols-outlined text-[14px] text-cobalt-core">local_shipping</span>
                             Entrega en &lt; 3 días
                         </span>
-                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-surface-container text-cobalt-dark font-label-caps text-label-caps uppercase shadow-sm">
-                            <span class="material-symbols-outlined text-[15px] text-amber-vibrant">layers</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-surface-container text-cobalt-dark font-label-caps text-[10px] sm:text-label-caps uppercase shadow-sm">
+                            <span class="material-symbols-outlined text-[14px] text-amber-vibrant">layers</span>
                             DTF Ultra HD Lavable
                         </span>
                     </div>
 
                     <!-- Hero Pitch Split Layout (Logo Animado a un lado, Texto al otro lado) -->
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-space-2xl pt-2">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center mb-space-xl sm:mb-space-2xl pt-2">
                         <!-- Columna Logo con Animación Flotante y Efecto de Estudio -->
                         <div class="lg:col-span-5 flex justify-center items-center">
                             <div class="relative group">
@@ -352,18 +353,18 @@
                                 <div class="absolute -inset-4 bg-gradient-to-tr from-orange-400/25 via-amber-300/20 to-sky-400/20 rounded-full blur-2xl pulse-aura-animation pointer-events-none"></div>
                                 
                                 <!-- Contenedor flotante interactivo -->
-                                <div class="relative p-6 sm:p-8 rounded-3xl bg-surface-pure/95 backdrop-blur-md border border-slate-line/60 shadow-[0_20px_45px_-12px_rgba(255,107,0,0.18)] flex flex-col items-center justify-center float-logo-animation hover:scale-[1.03] transition-all duration-300">
+                                <div class="relative p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-surface-pure/95 backdrop-blur-md border border-slate-line/60 shadow-[0_20px_45px_-12px_rgba(255,107,0,0.18)] flex flex-col items-center justify-center float-logo-animation hover:scale-[1.03] transition-all duration-300">
                                     <img src="{% static 'customizer/images/logo_stampcol_transparent.png' %}" 
                                          alt="StampCol - Create your idea" 
-                                         class="w-48 sm:w-60 md:w-72 lg:w-80 h-auto object-contain drop-shadow-xl select-none">
+                                         class="w-36 sm:w-60 md:w-72 lg:w-80 h-auto object-contain drop-shadow-xl select-none">
                                     
                                     <!-- Badges informativos bajo el logo -->
-                                    <div class="mt-4 pt-3.5 border-t border-slate-line/50 flex items-center justify-center gap-2.5 w-full flex-wrap">
-                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-cobalt-dark font-label-caps text-label-caps font-bold">
+                                    <div class="mt-3 sm:mt-4 pt-2.5 sm:pt-3.5 border-t border-slate-line/50 flex items-center justify-center gap-2 sm:gap-2.5 w-full flex-wrap">
+                                        <span class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-surface-container text-cobalt-dark font-label-caps text-[10px] sm:text-label-caps font-bold">
                                             <span class="w-2 h-2 rounded-full bg-whatsapp-green animate-ping"></span>
                                             Taller Oficial Huila
                                         </span>
-                                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps font-bold">
+                                        <span class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-[10px] sm:text-label-caps font-bold">
                                             DTF Ultra HD
                                         </span>
                                     </div>
@@ -373,13 +374,13 @@
 
                         <!-- Columna Titular, Descripción & Llamados a la Acción -->
                         <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed mb-space-sm font-label-md text-label-md font-bold shadow-xs">
-                                <span class="material-symbols-outlined text-[16px]">magic_button</span> Personalización Textil de Alta Gama
+                            <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed mb-space-xs sm:mb-space-sm font-label-md text-xs sm:text-label-md font-bold shadow-xs">
+                                <span class="material-symbols-outlined text-[15px] sm:text-[16px]">magic_button</span> Personalización Textil de Alta Gama
                             </div>
-                            <h1 class="font-display-hero text-on-surface tracking-tight leading-[1.08] mb-space-md text-3xl sm:text-5xl lg:text-[56px] font-black">
+                            <h1 class="font-display-hero text-on-surface tracking-tight leading-[1.08] mb-space-sm sm:mb-space-md text-2xl sm:text-5xl lg:text-[56px] font-black">
                                 Tú lo imaginas, nosotros lo <span class="text-secondary-container inline-block underline decoration-secondary-fixed decoration-wavy decoration-2">estampamos</span>.
                             </h1>
-                            <p class="font-body-xl text-on-surface-variant max-w-xl leading-relaxed text-base sm:text-lg mb-space-lg">
+                            <p class="font-body-xl text-on-surface-variant max-w-xl leading-relaxed text-sm sm:text-lg mb-space-md sm:mb-space-lg">
                                 Taller de confección y estampado textil DTF Ultra HD. Personaliza desde 1 sola prenda única hasta dotaciones completas con entrega a domicilio en Campoalegre y envíos seguros a toda Colombia.
                             </p>
 
@@ -390,7 +391,7 @@
                                     <span>Diseñar Mi Prenda Ahora</span>
                                     <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
                                 </a>
-                                <a class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-surface-container-low text-cobalt-dark font-label-lg text-label-lg shadow-md hover:bg-surface-container transition-all font-bold border border-slate-line/40" href="https://wa.me/{{ whatsapp_number }}?text={{ negocio.whatsapp.mensaje_general|urlencode }}" rel="noopener noreferrer" target="_blank">
+                                <a class="hidden sm:inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full bg-surface-container-low text-cobalt-dark font-label-lg text-label-lg shadow-md hover:bg-surface-container transition-all font-bold border border-slate-line/40" href="https://wa.me/{{ whatsapp_number }}?text={{ negocio.whatsapp.mensaje_general|urlencode }}" rel="noopener noreferrer" target="_blank">
                                     <svg class="w-5 h-5 fill-[#25D366] shrink-0" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.44 19.65L5.27 16.61L5.07 16.3C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.11C19.42 7.66 20.27 9.73 20.27 11.92C20.27 16.46 16.58 20.15 12.04 20.15ZM16.55 14.39C16.3 14.27 15.08 13.67 14.86 13.59C14.63 13.5 14.47 13.46 14.31 13.71C14.14 13.95 13.66 14.52 13.51 14.68C13.37 14.85 13.22 14.87 12.98 14.75C12.73 14.62 11.93 14.36 10.99 13.52C10.25 12.87 9.75 12.06 9.61 11.81C9.46 11.57 9.59 11.43 9.72 11.31C9.83 11.2 9.97 11.02 10.09 10.88C10.21 10.74 10.26 10.63 10.33 10.47C10.41 10.31 10.37 10.17 10.31 10.04C10.25 9.92 9.75 8.7 9.55 8.2C9.35 7.72 9.14 7.78 8.99 7.77C8.84 7.77 8.68 7.77 8.52 7.77C8.35 7.77 8.08 7.83 7.86 8.08C7.63 8.32 7 8.91 7 10.13C7 11.35 7.89 12.52 8.01 12.69C8.13 12.85 9.75 15.36 12.24 16.44C12.83 16.7 13.29 16.85 13.65 16.96C14.25 17.15 14.79 17.12 15.22 17.06C15.7 16.99 16.69 16.46 16.9 15.88C17.1 15.31 17.1 14.82 17.04 14.72C16.98 14.62 16.8 14.52 16.55 14.39Z"/></svg>
                                     <span>Cotizar por WhatsApp</span>
                                     <span class="font-label-caps text-label-caps text-on-surface-variant">({{ negocio.whatsapp.numero_display }})</span>
@@ -1614,16 +1615,17 @@
     </footer>
 
     <!-- Botón Flotante de WhatsApp -->
-    <a class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-full bg-whatsapp-green text-on-primary font-label-lg text-label-lg shadow-[0_20px_30px_-10px_rgba(15,23,42,0.25)] hover:scale-105 transition-transform font-bold" href="https://wa.me/{{ whatsapp_number }}?text={{ negocio.whatsapp.mensaje_general|urlencode }}" rel="noopener noreferrer" target="_blank" title="Abrir WhatsApp StampCol">
+    <a id="btn-floating-whatsapp" class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-full bg-whatsapp-green text-on-primary font-label-lg text-label-lg shadow-[0_20px_30px_-10px_rgba(15,23,42,0.25)] hover:scale-105 transition-transform font-bold" href="https://wa.me/{{ whatsapp_number }}?text={{ negocio.whatsapp.mensaje_general|urlencode }}" rel="noopener noreferrer" target="_blank" title="Abrir WhatsApp StampCol">
         <svg class="w-6 h-6 fill-white shrink-0" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.44 19.65L5.27 16.61L5.07 16.3C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.69 12.04 3.69C14.24 3.69 16.31 4.55 17.86 6.11C19.42 7.66 20.27 9.73 20.27 11.92C20.27 16.46 16.58 20.15 12.04 20.15ZM16.55 14.39C16.3 14.27 15.08 13.67 14.86 13.59C14.63 13.5 14.47 13.46 14.31 13.71C14.14 13.95 13.66 14.52 13.51 14.68C13.37 14.85 13.22 14.87 12.98 14.75C12.73 14.62 11.93 14.36 10.99 13.52C10.25 12.87 9.75 12.06 9.61 11.81C9.46 11.57 9.59 11.43 9.72 11.31C9.83 11.2 9.97 11.02 10.09 10.88C10.21 10.74 10.26 10.63 10.33 10.47C10.41 10.31 10.37 10.17 10.31 10.04C10.25 9.92 9.75 8.7 9.55 8.2C9.35 7.72 9.14 7.78 8.99 7.77C8.84 7.77 8.68 7.77 8.52 7.77C8.35 7.77 8.08 7.83 7.86 8.08C7.63 8.32 7 8.91 7 10.13C7 11.35 7.89 12.52 8.01 12.69C8.13 12.85 9.75 15.36 12.24 16.44C12.83 16.7 13.29 16.85 13.65 16.96C14.25 17.15 14.79 17.12 15.22 17.06C15.7 16.99 16.69 16.46 16.9 15.88C17.1 15.31 17.1 14.82 17.04 14.72C16.98 14.62 16.8 14.52 16.55 14.39Z"/></svg>
         <span class="hidden md:inline font-bold">Asesoría DTF en Vivo</span>
     </a>
 
     <!-- ========================================================= -->
     <!-- BARRA INFERIOR MÓVIL FIJA (SAFE-BOTTOM)                   -->
+    <!-- Solo visible en modo responsive dentro del personalizador -->
     <!-- ========================================================= -->
-    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-xl border-t border-slate-line/80 px-4 py-2.5 safe-bottom flex items-center justify-between gap-3 shadow-[0_-4px_20px_rgba(0,0,0,0.06)]">
-        <button type="button" id="mobile-toggle-view-btn" onclick="toggleMobileView()" class="flex-1 py-2.5 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 transition-colors">
+    <div id="mobile-studio-bottom-bar" class="hidden lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-xl border-t border-slate-line/80 px-4 py-2.5 safe-bottom items-center justify-between gap-3 shadow-[0_-4px_20px_rgba(0,0,0,0.06)] transition-all duration-300">
+        <button type="button" id="mobile-toggle-view-btn" onclick="toggleMobileView()" class="hidden flex-1 py-2.5 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-bold items-center justify-center gap-1.5 transition-colors">
             <span class="material-symbols-outlined text-[18px]">sync</span>
             <span id="mobile-toggle-view-text">Ver Espalda</span>
         </button>
@@ -2727,6 +2729,89 @@
                 });
             }
         });
+
+        // =========================================================
+        // CONTROL RESPONSIVE: VISIBILIDAD BARRA ESTUDIO & WHATSAPP
+        // =========================================================
+        (function initResponsiveStudioUI() {
+            const studioSection = document.getElementById('estudio-creativo');
+            const mobileBottomBar = document.getElementById('mobile-studio-bottom-bar');
+            const mobileToggleBtn = document.getElementById('mobile-toggle-view-btn');
+            const floatingWhatsApp = document.getElementById('btn-floating-whatsapp');
+
+            if (!studioSection || !mobileBottomBar) return;
+
+            function updateMobileUI(isInStudio) {
+                const isMobile = window.innerWidth < 1024;
+                if (!isMobile) {
+                    mobileBottomBar.classList.add('hidden');
+                    mobileBottomBar.classList.remove('flex');
+                    if (floatingWhatsApp) {
+                        floatingWhatsApp.classList.remove('hidden');
+                        floatingWhatsApp.classList.add('flex');
+                    }
+                    return;
+                }
+
+                if (isInStudio) {
+                    mobileBottomBar.classList.remove('hidden');
+                    mobileBottomBar.classList.add('flex');
+                    if (mobileToggleBtn) {
+                        mobileToggleBtn.classList.remove('hidden');
+                        mobileToggleBtn.classList.add('flex');
+                    }
+                    if (floatingWhatsApp) {
+                        // En modo móvil dentro del personalizador, ocultamos el botón flotante
+                        // para que no se superponga sobre el botón de cotizar pedido
+                        floatingWhatsApp.classList.add('hidden');
+                        floatingWhatsApp.classList.remove('flex');
+                    }
+                } else {
+                    mobileBottomBar.classList.add('hidden');
+                    mobileBottomBar.classList.remove('flex');
+                    if (mobileToggleBtn) {
+                        mobileToggleBtn.classList.add('hidden');
+                        mobileToggleBtn.classList.remove('flex');
+                    }
+                    if (floatingWhatsApp) {
+                        // Fuera del personalizador, el botón flotante se ve limpio sin solapamientos
+                        floatingWhatsApp.classList.remove('hidden');
+                        floatingWhatsApp.classList.add('flex');
+                    }
+                }
+            }
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        updateMobileUI(entry.isIntersecting);
+                    });
+                }, {
+                    root: null,
+                    threshold: 0.05
+                });
+                observer.observe(studioSection);
+            } else {
+                window.addEventListener('scroll', () => {
+                    const rect = studioSection.getBoundingClientRect();
+                    const inView = (rect.top <= window.innerHeight * 0.85 && rect.bottom >= window.innerHeight * 0.15);
+                    updateMobileUI(inView);
+                }, { passive: true });
+            }
+
+            window.addEventListener('resize', () => {
+                const rect = studioSection.getBoundingClientRect();
+                const inView = (rect.top <= window.innerHeight * 0.85 && rect.bottom >= window.innerHeight * 0.15);
+                updateMobileUI(inView);
+            });
+
+            // Chequeo inicial
+            setTimeout(() => {
+                const rect = studioSection.getBoundingClientRect();
+                const inView = (rect.top <= window.innerHeight * 0.85 && rect.bottom >= window.innerHeight * 0.15);
+                updateMobileUI(inView);
+            }, 100);
+        })();
     </script>
 </body>
 </html>
