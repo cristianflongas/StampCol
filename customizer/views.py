@@ -10,7 +10,7 @@ from django.urls import reverse
 from django.http import JsonResponse
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
-from django.views.decorators.http import require_POST, require_GET
+from django.views.decorators.http import require_POST, require_GET, require_http_methods
 from django.core.files.base import ContentFile
 from django.conf import settings
 
@@ -31,10 +31,11 @@ except ImportError:
     requests = None
 
 
-@require_GET
+@require_http_methods(["GET", "HEAD"])
 def health_check(request):
     """
     Endpoint ultraligero para UptimeRobot y monitoreo de disponibilidad.
+    Soporta peticiones GET y HEAD (utilizadas por defecto por UptimeRobot).
     Responde en <5ms con status 200 sin cargar la base de datos ni plantillas,
     asegurando que Render permanezca activo 24/7 y la web siempre responda al instante.
     """
