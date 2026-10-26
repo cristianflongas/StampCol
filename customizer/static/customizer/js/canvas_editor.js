@@ -870,15 +870,18 @@ class HoodieCustomizer {
         window.addEventListener('touchmove', onMove, { passive: false });
         window.addEventListener('touchend', onEnd);
 
-        // Zoom rápido con la rueda del ratón al pasar el cursor sobre la prenda
+        // Zoom con la rueda del ratón: Solo aplicar zoom si presiona Ctrl o Meta
+        // para garantizar que la rueda del mouse desplace la página web de manera 100% fluida
         this.canvas.addEventListener('wheel', (e) => {
             const layer = this.getCurrentLayer();
             if (!layer || !layer.hasDesign) return;
             const { x, y } = this.getCanvasCoords(e);
             if (this.isPointInsideDesign(x, y)) {
-                e.preventDefault();
-                const step = e.deltaY < 0 ? 0.08 : -0.08;
-                this.setDesignScale(layer.scale + step);
+                if (e.ctrlKey || e.metaKey) {
+                    e.preventDefault();
+                    const step = e.deltaY < 0 ? 0.08 : -0.08;
+                    this.setDesignScale(layer.scale + step);
+                }
             }
         }, { passive: false });
 

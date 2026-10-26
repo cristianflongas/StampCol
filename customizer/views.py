@@ -31,6 +31,20 @@ except ImportError:
     requests = None
 
 
+@require_GET
+def health_check(request):
+    """
+    Endpoint ultraligero para UptimeRobot y monitoreo de disponibilidad.
+    Responde en <5ms con status 200 sin cargar la base de datos ni plantillas,
+    asegurando que Render permanezca activo 24/7 y la web siempre responda al instante.
+    """
+    return JsonResponse({
+        'status': 'ok',
+        'service': 'stampcol',
+        'timestamp': timezone.now().isoformat()
+    }, status=200)
+
+
 @ensure_csrf_cookie
 def index(request):
     """

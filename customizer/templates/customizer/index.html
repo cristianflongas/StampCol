@@ -44,15 +44,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden !important;
-            width: 100% !important;
-            max-width: 100% !important;
+        html {
+            scroll-behavior: smooth;
+            overflow-x: clip;
+            width: 100%;
         }
         body {
-            overscroll-behavior: none;
+            margin: 0;
+            padding: 0;
+            overflow-x: clip;
+            width: 100%;
+            min-height: 100vh;
         }
         main > :first-child {
             margin-top: 0 !important;
@@ -61,12 +63,29 @@
             margin-bottom: 0 !important;
         }
         canvas {
-            touch-action: none;
+            touch-action: pan-y;
             -webkit-user-select: none;
             user-select: none;
         }
+        /* Barra de desplazamiento elegante, visible y fluida para el mouse */
         ::-webkit-scrollbar {
-            display: none;
+            width: 9px;
+            height: 9px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+            border: 2px solid #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff6b00;
+        }
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 #f1f5f9;
         }
         .sc-eraser-cursor {
             cursor: crosshair;
@@ -1638,7 +1657,7 @@
     <!-- ========================================================= -->
     <!-- MODAL MÓVIL DE COTIZACIÓN Y CHECKOUT                      -->
     <!-- ========================================================= -->
-    <div id="mobile-checkout-modal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-md">
+    <div id="mobile-checkout-modal" style="display: none;" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-md">
         <div class="relative w-full max-w-lg bg-surface-pure rounded-t-3xl sm:rounded-3xl p-6 shadow-2xl flex flex-col max-h-[90vh] overflow-y-auto animate-in slide-in-from-bottom duration-200">
             <div class="flex items-center justify-between pb-3 border-b border-slate-line">
                 <div class="flex items-center gap-2">
@@ -1679,7 +1698,7 @@
     <!-- ========================================================= -->
     <!-- MODAL BORRADOR MANUAL DE PRECISIÓN EN VIVO                -->
     <!-- ========================================================= -->
-    <div id="manual-eraser-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+    <div id="manual-eraser-modal" style="display: none;" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
         <div class="relative w-full max-w-2xl bg-surface-pure rounded-3xl p-6 shadow-2xl flex flex-col max-h-[92vh] overflow-hidden">
             <div class="flex items-center justify-between pb-4 border-b border-slate-line">
                 <div class="flex items-center gap-2">
@@ -1722,7 +1741,7 @@
     <!-- ========================================================= -->
     <!-- MODAL DE TRANSFERENCIA DIRECTA A WHATSAPP CON IMAGEN      -->
     <!-- ========================================================= -->
-    <div id="whatsapp-transfer-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
+    <div id="whatsapp-transfer-modal" style="display: none;" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
         <div class="relative w-full max-w-md bg-surface-pure rounded-3xl p-6 sm:p-7 shadow-2xl flex flex-col border border-slate-line/80 text-center">
             
             <!-- Botón Cerrar -->
@@ -1833,12 +1852,18 @@
 
         function openMobileCheckoutModal() {
             const modal = document.getElementById('mobile-checkout-modal');
-            if (modal) modal.classList.remove('hidden');
+            if (modal) {
+                modal.style.display = 'flex';
+                modal.classList.remove('hidden');
+            }
         }
 
         function closeMobileCheckoutModal() {
             const modal = document.getElementById('mobile-checkout-modal');
-            if (modal) modal.classList.add('hidden');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.add('hidden');
+            }
         }
 
         // Alternar pestañas 1. Estampado, 2. Prenda & Tela, 3. Cotizar
@@ -2342,13 +2367,17 @@
                 btnWa.href = orderRes.whatsapp_url;
             }
             if (modal) {
+                modal.style.display = 'flex';
                 modal.classList.remove('hidden');
             }
         }
 
         function closeWhatsAppTransferModal() {
             const modal = document.getElementById('whatsapp-transfer-modal');
-            if (modal) modal.classList.add('hidden');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.add('hidden');
+            }
         }
 
         async function copyDesignImageAgain() {
@@ -2436,6 +2465,7 @@
 
                 window.eraserState.originalImage = img;
                 eraserSaveState();
+                modal.style.display = 'flex';
                 modal.classList.remove('hidden');
                 window.eraserState.isOpen = true;
             };
@@ -2444,7 +2474,10 @@
 
         function closeManualEraserModal() {
             const modal = document.getElementById('manual-eraser-modal');
-            if (modal) modal.classList.add('hidden');
+            if (modal) {
+                modal.style.display = 'none';
+                modal.classList.add('hidden');
+            }
             window.eraserState.isOpen = false;
         }
 

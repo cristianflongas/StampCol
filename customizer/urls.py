@@ -7,6 +7,10 @@ urlpatterns = [
     # Vista principal interactiva
     path('', views.index, name='index'),
     
+    # Endpoint de Monitoreo / Keep-Alive para UptimeRobot (24/7 activo en Render)
+    path('health/', views.health_check, name='health_check'),
+    path('ping/', views.health_check, name='ping'),
+    
     # Endpoint del Asistente IA Gemini
     path('api/gemini-assistant/', views.gemini_assistant_view, name='gemini_assistant'),
     
